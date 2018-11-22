@@ -1,0 +1,75 @@
+#canvason  {
+	position: absolute;
+	left: 20px;
+	top: 20px;
+	z-index: 9999;
+}
+#canvasunder  {
+	position: absolute;
+	left: 20px;
+	top: 20px;
+	z-index: -1;
+}
+#btn {
+	margin-top: 530px;
+	margin-left: 250px;
+}
+#btn button {
+	width: 100px;
+	height: 40px;
+	color: #fff;
+	background: #000;
+	font-weight: bold;
+	font-size: 15px;
+	border-radius: 5px;
+	margin-right: 20px;
+	opacity: 0.5;
+}
+#btn input {
+	width: 100px;
+	height: 40px;
+	color: #fff;
+	background: #000;
+	font-weight: bold;
+	font-size: 15px;
+	border-radius: 5px;
+	margin-right: 20px;
+	opacity: 0.5;
+}
+#size {
+	margin-left: 250px;
+	margin-top: 20px;
+}
+#size button {
+	background: #000;
+	border-radius: 50px;
+	margin-right: 20px;
+	opacity: 0.5;
+}
+#big {
+	width: 40px;
+	height: 40px;
+}
+#middle {
+	width: 30px;
+	height: 30px;
+}
+#small {
+	width: 20px;
+	height: 20px;
+}
+#minmum {
+	width: 10px;
+	height: 10px;
+}
+#color {
+	margin-left: 250px;
+	margin-top: 20px;
+}
+#color button {
+	width: 40px;
+	height: 40px;
+	border-radius: 50px;
+	margin-right: 20px;
+	opacity: 0.5;
+}

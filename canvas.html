@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>canvas</title>
+	<link rel="stylesheet" type="text/css" href="canvas.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+<body>
+	<canvas id="canvason" width="900" height="500"></canvas>
+	<canvas id="canvasunder" width="900" height="500"></canvas>
+	<div id="btn">
+		<input type="file" onchange="selectImage(this);" style="opacity: 1"/>
+		<button id="brush" style="opacity: 1">brush</button>
+		<button id="rubber">rubber</button>
+		<button id="clean" onclick="clean()" style="opacity: 1">clean</button>
+	</div>
+	<div id="size">
+		<button id="big" onclick="setSize(40,'big')"></button>
+		<button id="middle" onclick="setSize(30,'middle')"></button>
+		<button id="small" onclick="setSize(20,'small')"></button>
+		<button id="minmum" onclick="setSize(10,'minmum')" style="opacity: 1"></button>
+	</div>
+	<div id="color">
+		<button id="red" style="background:red; opacity: 1" onclick="setColor('red')" ></button>
+		<button id="yellow" style="background:yellow" onclick="setColor('yellow')"></button>
+		<button id="blue" style="background:blue" onclick="setColor('blue')"></button>
+		<button id="green" style="background:green" onclick="setColor('green')"></button>
+		<button id="black" style="background:black" onclick="setColor('black')"></button>
+	</div>
+	<script type="text/javascript" src="js/canvas.js"></script>
+
+</body>
+</html>
+<!-- 问题：
+1. 改绑定事件
+2. 改样式
+3. 下载按钮
+4. 图片尺寸问题
+5. 滤镜
+6. 代码重构
+-->
