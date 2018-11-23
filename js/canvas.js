@@ -85,14 +85,11 @@
         }
         var reader = new FileReader();
         reader.onload = function (evt) {
-        	imageUrl = evt.target.result;
-            showPic (imageUrl); //这里是base64编码
+        	imageUrl = evt.target.result;//这里是base64编码
+            showPic (imageUrl); 
         }
         reader.readAsDataURL(file.files[0]);
 	});
-	// $("#clean").click(function() {
-	// 	contextOn.clearRect(0, 0, 900, 500);
-	// });
 	$("#size").click(function(event) {
 		size = event.target.dataset.num;
 		$("#big,#middle,#small,#minmum").css("opacity", "0.5");
