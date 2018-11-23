@@ -79,4 +79,21 @@
 			}
 		}
 	}
+	function clean () {
+		contextOn.clearRect(0, 0, 900, 500);
+	}
+	$("#size").click(function(event) {
+		size = event.target.dataset.num;
+		$("#big,#middle,#small,#minmum").css("opacity", "0.5");
+		$(`#${event.target.id}`).css("opacity", "1");
+		console.log(event.target.id, event.target.dataset.num);
+		console.log(size);
+	});
+	$("#color").click(function(event) {
+		color = event.target.id;
+		$("#red,#yellow,#blue,#green,#black").css("opacity", "0.5");
+		$(`#${event.target.id}`).css("opacity", "1");
+		console.log(event.target.id);
+		console.log(color);
+	});
 })();

@@ -4,7 +4,6 @@
 	<title>simple canvas</title>
 	<link rel="stylesheet" type="text/css" href="canvas.css">
 	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/set.js"></script>
 </head>
 <body>
 	<canvas id="canvason" width="900" height="500"></canvas>
@@ -16,17 +15,17 @@
 		<button id="clean" onclick="clean()" style="opacity: 1">clean</button>
 	</div>
 	<div id="size">
-		<button id="big" onclick="setSize(40,'big')"></button>
-		<button id="middle" onclick="setSize(30,'middle')"></button>
-		<button id="small" onclick="setSize(20,'small')"></button>
-		<button id="minmum" onclick="setSize(10,'minmum')" style="opacity: 1"></button>
+		<button id="big" data-num="40"></button>
+		<button id="middle" data-num="30"></button>
+		<button id="small" data-num="20"></button>
+		<button id="minmum" data-num="10" style="opacity: 1"></button>
 	</div>
 	<div id="color">
-		<button id="red" style="background:red; opacity: 1" onclick="setColor('red')" ></button>
-		<button id="yellow" style="background:yellow" onclick="setColor('yellow')"></button>
-		<button id="blue" style="background:blue" onclick="setColor('blue')"></button>
-		<button id="green" style="background:green" onclick="setColor('green')"></button>
-		<button id="black" style="background:black" onclick="setColor('black')"></button>
+		<button id="red" style="background:red; opacity: 1"></button>
+		<button id="yellow" style="background:yellow"></button>
+		<button id="blue" style="background:blue"></button>
+		<button id="green" style="background:green"></button>
+		<button id="black" style="background:black"></button>
 	</div>
 	<script type="text/javascript" src="js/canvas.js"></script>
 	
