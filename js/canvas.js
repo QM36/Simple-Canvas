@@ -67,27 +67,13 @@
 		$("#rubber").css("opacity", "1");
 		console.log("brush : " + brush);
 	});
-	function setSize (num,id) {
-		size = num;
-		$("#big,#middle,#small,#minmum").css("opacity", "0.5");
-		$(`#${id}`).css("opacity", "1");
-		console.log(size);
-	}
-	function setColor (col) {
-		color = col;
-		$("#red,#yellow,#blue,#green,#black").css("opacity", "0.5");
-		$(`#${col}`).css("opacity", "1");
-		console.log(color);
-	}
-	function clean () {
-		contextOn.clearRect(0, 0, 900, 500);
-	}
 	function showPic (imageUrl) {
 		if (drawingUnder.getContext){
 			var contextUnder = drawingUnder.getContext("2d");
     		console.log(size);
     		var image = new Image ();
 			image.src = imageUrl;
+			// image.src = "1.png";
 			image.onload = function () {
 				contextUnder.drawImage(image, 0, 0, 900, 500);
 			}
