@@ -6,13 +6,13 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 </head>
 <body>
-	<canvas id="canvason" width="900" height="500"></canvas>
-	<canvas id="canvasunder" width="900" height="500"></canvas>
+	<canvas id="canvason"></canvas>
+	<canvas id="canvasunder"></canvas>
 	<div id="btn">
-		<input type="file" onchange="selectImage(this);" style="opacity: 1"/>
+		<input id="open" type="file" style="opacity: 1"/>
 		<button id="brush" style="opacity: 1">brush</button>
 		<button id="rubber">rubber</button>
-		<button id="clean" onclick="clean()" style="opacity: 1">clean</button>
+		<button id="clean" style="opacity: 1">clean</button>
 	</div>
 	<div id="size">
 		<button id="big" data-num="40"></button>

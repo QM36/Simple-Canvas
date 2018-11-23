@@ -7,19 +7,9 @@
 	var size = 10;
 	var color = "red";
 	var imageUrl = "https://ws1.sinaimg.cn/large/006XqmrNly1fxftmamyd9j31hc0xc425.jpg";
-	
+	var ratio;
+
 	showPic (imageUrl);
-	function selectImage(file) {
-        if (!file.files || !file.files[0]) {
-            return;
-        }
-        var reader = new FileReader();
-        reader.onload = function (evt) {
-        	imageUrl = evt.target.result;
-            showPic (imageUrl); //这里是base64编码
-        }
-        reader.readAsDataURL(file.files[0]);
-    }
 
 	if (drawingOn.getContext){
 		var contextOn = drawingOn.getContext("2d");
@@ -33,9 +23,9 @@
 		contextOn.strokeStyle = color;
 		if(brush) {
 			contextOn.beginPath();
-			contextOn.moveTo(x-20, y-20);
+			contextOn.moveTo((x-20) * ratio, (y-20) * ratio);
 		} else {
-			contextOn.clearRect(x-20-size/2, y-20-size/2, size, size);
+			contextOn.clearRect((x-20-size/2) * ratio, (y-20-size/2) * ratio , size * ratio, size * ratio);
 		}
 	});
 	$("#canvason").mouseup(function(event) {
@@ -48,10 +38,10 @@
 			contextOn.lineWidth = size;
 			contextOn.strokeStyle = color;
 			if (brush) {
-				contextOn.lineTo(x-20, y-20);
+				contextOn.lineTo((x-20) * ratio, (y-20) * ratio);
 				contextOn.stroke();
 			} else {
-				contextOn.clearRect(x-20-size/2, y-20-size/2, size, size);
+				contextOn.clearRect((x-20-size/2) * ratio, (y-20-size/2) * ratio , size * ratio, size * ratio);
 			}
 		}
 	});
@@ -70,30 +60,49 @@
 	function showPic (imageUrl) {
 		if (drawingUnder.getContext){
 			var contextUnder = drawingUnder.getContext("2d");
-    		console.log(size);
     		var image = new Image ();
 			image.src = imageUrl;
-			// image.src = "1.png";
 			image.onload = function () {
-				contextUnder.drawImage(image, 0, 0, 900, 500);
+				drawingUnder.width = image.width;
+				drawingUnder.height = image.height;
+				drawingOn.width = image.width;
+				console.log(image.width);
+				drawingOn.height = image.height;
+				console.log($("#canvasunder").css("width"));
+				ratio = image.width / 1000;
+				console.log(ratio);
+				contextUnder.drawImage(image, 0, 0, image.width, image.height);
+				$("#clean").click(function() {
+					contextOn.clearRect(0, 0, image.width, image.height);
+				});
 			}
 		}
 	}
-	function clean () {
-		contextOn.clearRect(0, 0, 900, 500);
-	}
+	$("#open").change(function(event) {
+		var file = event.target
+		if (!file.files || !file.files[0]) {
+            return;
+        }
+        var reader = new FileReader();
+        reader.onload = function (evt) {
+        	imageUrl = evt.target.result;
+            showPic (imageUrl); //这里是base64编码
+        }
+        reader.readAsDataURL(file.files[0]);
+	});
+	// $("#clean").click(function() {
+	// 	contextOn.clearRect(0, 0, 900, 500);
+	// });
 	$("#size").click(function(event) {
 		size = event.target.dataset.num;
 		$("#big,#middle,#small,#minmum").css("opacity", "0.5");
 		$(`#${event.target.id}`).css("opacity", "1");
 		console.log(event.target.id, event.target.dataset.num);
-		console.log(size);
 	});
 	$("#color").click(function(event) {
 		color = event.target.id;
 		$("#red,#yellow,#blue,#green,#black").css("opacity", "0.5");
 		$(`#${event.target.id}`).css("opacity", "1");
 		console.log(event.target.id);
-		console.log(color);
 	});
 })();

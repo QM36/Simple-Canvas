@@ -1,17 +1,19 @@
 #canvason  {
+	width: 1000px;
 	position: absolute;
 	left: 20px;
 	top: 20px;
 	z-index: 9999;
 }
 #canvasunder  {
+	width: 1000px;
 	position: absolute;
 	left: 20px;
 	top: 20px;
 	z-index: -1;
 }
 #btn {
-	margin-top: 530px;
+	margin-top: 700px;
 	margin-left: 250px;
 }
 #btn button {
