@@ -17,9 +17,9 @@
 
 	$("#canvason").mousedown(function(event) {
 		down = true;
-		x=event.clientX;
-		y=event.clientY;
-		contextOn.lineWidth = size;
+		x=event.pageX;
+		y=event.pageY;
+		contextOn.lineWidth = size * ratio;
 		contextOn.strokeStyle = color;
 		if(brush) {
 			contextOn.beginPath();
@@ -33,9 +33,9 @@
 	});
 	$("#canvason").mousemove(function(event) {
 		if(down) {
-			x=event.clientX;
-			y=event.clientY;
-			contextOn.lineWidth = size;
+			x=event.pageX;
+			y=event.pageY;
+			contextOn.lineWidth = size * ratio;
 			contextOn.strokeStyle = color;
 			if (brush) {
 				contextOn.lineTo((x-20) * ratio, (y-20) * ratio);
@@ -66,11 +66,8 @@
 				drawingUnder.width = image.width;
 				drawingUnder.height = image.height;
 				drawingOn.width = image.width;
-				console.log(image.width);
 				drawingOn.height = image.height;
-				console.log($("#canvasunder").css("width"));
-				ratio = image.width / 1000;
-				console.log(ratio);
+				ratio = image.height / 530;
 				contextUnder.drawImage(image, 0, 0, image.width, image.height);
 				$("#clean").click(function() {
 					contextOn.clearRect(0, 0, image.width, image.height);
