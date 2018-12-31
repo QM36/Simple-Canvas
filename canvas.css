@@ -75,3 +75,17 @@
 	margin-right: 20px;
 	opacity: 0.5;
 }
+#filter {
+	margin-left: 250px;
+	margin-top: 20px;
+}
+#filter button {
+	width: 100px;
+	height: 40px;
+	color: #fff;
+	background: #000;
+	font-weight: bold;
+	font-size: 15px;
+	border-radius: 5px;
+	margin-right: 20px;
+}
